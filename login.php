@@ -18,7 +18,7 @@
     <![endif]-->
   </head>
   <body>
-    
+
 <p><br><br><br></p>
 <div class="container">
 	<div class="row">
@@ -31,7 +31,7 @@
 				if(isset($_POST['username']) && isset($_POST['password'])){
 					$username = $_POST['username'];
 					$password = md5($_POST['password']);
-					$stmt = $db ->prepare("SELECT * FROM login WHERE username=? AND password=?");
+					$stmt = $conn ->prepare("SELECT * FROM login WHERE username=? AND password=?");
 					$stmt->bindParam(1, $username);
 					$stmt -> bindParam(2, $password);
 					$stmt -> execute();
@@ -69,10 +69,10 @@
 						<label>Password</label>
 						<input type="password" class="form-control" name="password"/>
 					</div>
-					<input type="submit" value="Login" class="btn btn-primary" />		
+					<input type="submit" value="Login" class="btn btn-primary" />
 				</form>
 			</div>
-				
+
 			</div>
 		</div>
 		<div class="col-md-4"></div>
@@ -85,4 +85,3 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.js/bootstrap.min.js"></script>
   </body>
 </html>
-
